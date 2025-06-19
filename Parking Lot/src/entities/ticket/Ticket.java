@@ -13,6 +13,7 @@ public class Ticket {
     private ParkingSpot parkingSpot;
     private Vehicle vehicle ;
     private LocalDateTime entryTime;
+    private LocalDateTime exitTime ;
 
     public Ticket(Vehicle vehicle , ParkingSpot parkingSpot){
         this.id = ++ticketCounter;
@@ -70,4 +71,11 @@ public class Ticket {
         this.entryTime = entryTime;
     }
 
+    public void setExitTime(LocalDateTime exitTime){
+        this.exitTime = exitTime ;
+    }
+
+    public LocalDateTime getExitTime(){
+        return this.exitTime ;
+    }
 }

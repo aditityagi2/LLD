@@ -10,6 +10,8 @@ import factory.ParkingStratergyFactory;
 import managers.parking_spot.ParkingSpotManager;
 import utility.parking_stratergy.ParkingStratergy;
 
+import java.time.LocalDateTime;
+
 public class FirstFloorTicketGeneration implements TicketGenerationStratergy{
     @Override
     public Ticket generateTicket(Vehicle vehicle, ParkingSpotManager parkingSpotManager) {
@@ -28,5 +30,9 @@ public class FirstFloorTicketGeneration implements TicketGenerationStratergy{
             throw new ParkingSpotException(ParkingExceptionConstants.No_EMPTY_SLOT_FIRST_FLOOR);
         }
         return ticket;
+    }
+
+    public int calculateHours(LocalDateTime start , LocalDateTime end){
+        return end.getHour() - start.getHour();
     }
 }

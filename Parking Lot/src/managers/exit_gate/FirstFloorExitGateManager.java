@@ -18,11 +18,11 @@ public class FirstFloorExitGateManager implements ExitGateManager {
             ticket.setPrice(fee);
             ticket.getParkingSpot().removeVehicle();
             System.out.println("Vehicle with number " + ticket.getVehicle().getLicensePlate() + " has exited the parking lot."+ " Fee charged: " + fee);
+            return true;
         }catch (Exception e ){
             e.printStackTrace();
             return false;
         }
-        return false;
     }
 }
 
